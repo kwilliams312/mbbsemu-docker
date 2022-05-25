@@ -29,7 +29,7 @@ RUN \
 	unzip 
 
 
-RUN cd ${EMULATOR_PATH}
+WORKDIR ${EMULATOR_PATH}
 RUN wget https://github.com/mbbsemu/MBBSEmu/releases/download/v1.0-alpha-042822/mbbsemu-linux-x64-${VERSION}.zip        
 RUN unzip mbbsemu-linux-x64-${VERSION}.zip
 RUN rm mbbsemu*.zip
@@ -38,3 +38,5 @@ RUN chmod a+x MBBSEmu
 
 VOLUME ${CONFIG_PATH}
 WORKDIR ${CONFIG_PATH}
+
+ENTRYPOINT ["${EMULATOR_PATH}\mbbsemu"]
