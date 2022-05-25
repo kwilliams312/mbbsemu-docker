@@ -4,6 +4,7 @@
 # Using Ubuntu instead of Alpine, since MBBSEmu is not Alpine compatible.
 FROM lsiobase/ubuntu:focal
 
+# version from the MBBSEMU repo: https://github.com/mbbsemu/MBBSEmu/releases
 ARG VERSION="042822-1"
 
 LABEL build_version="MBBSEmu version:- ${VERSION}"
