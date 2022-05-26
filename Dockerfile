@@ -38,4 +38,5 @@ RUN chmod a+x MBBSEmu
 VOLUME ${CONFIG_PATH}
 WORKDIR ${CONFIG_PATH}
 
-ENTRYPOINT ["/app/MBBSEmu"]
+# realistically this should be a script that checks to see if the database exists
+ENTRYPOINT ["/app/MBBSEmu mbbsemu -DBRESET sysop]
