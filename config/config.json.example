@@ -1,7 +1,0 @@
- {
-  "Modules": [
-    {
-      "Identifier": "RTSLORD",
-      "Path": "/config/modules/RTSLORD"
-    }
-}

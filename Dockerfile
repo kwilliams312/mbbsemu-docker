@@ -32,11 +32,7 @@ WORKDIR /app
 RUN wget https://github.com/mbbsemu/MBBSEmu/releases/download/v1.0-alpha-042822/mbbsemu-linux-x64-${VERSION}.zip        
 RUN unzip mbbsemu-linux-x64-${VERSION}.zip
 RUN rm mbbsemu*.zip
-
 RUN chmod a+x MBBSEmu
 
-VOLUME ${CONFIG_PATH}
-WORKDIR ${CONFIG_PATH}
-
 # realistically this should be a script that checks to see if the database exists
-ENTRYPOINT ["/app/MBBSEmu mbbsemu -DBRESET sysop]
+ENTRYPOINT ["/app/MBBSEmu -C /config/config.json -DBRESET sysop"]
