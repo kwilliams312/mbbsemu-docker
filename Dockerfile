@@ -35,4 +35,4 @@ RUN rm mbbsemu*.zip
 RUN chmod a+x MBBSEmu
 
 # realistically this should be a script that checks to see if the database exists
-ENTRYPOINT ["/app/MBBSEmu -C /config/config.json -DBRESET sysop"]
+ENTRYPOINT ["/app/MBBSEmu","-C","/config/config.json" ,"-DBRESET", "sysop"]
