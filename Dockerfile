@@ -18,7 +18,6 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 ENV DOTNET_BUNDLE_EXTRACT_BASE_DIR=/tmp
 
 ENV CONFIG_PATH=/config
-ENV EMULATOR_PATH=/app
 
 # note libicu66 is specific to ubuntu 20.04, libicu60 is for 18.04
 RUN \
@@ -29,7 +28,7 @@ RUN \
 	unzip 
 
 
-WORKDIR ${EMULATOR_PATH}
+WORKDIR /app 
 RUN wget https://github.com/mbbsemu/MBBSEmu/releases/download/v1.0-alpha-042822/mbbsemu-linux-x64-${VERSION}.zip        
 RUN unzip mbbsemu-linux-x64-${VERSION}.zip
 RUN rm mbbsemu*.zip
@@ -39,4 +38,4 @@ RUN chmod a+x MBBSEmu
 VOLUME ${CONFIG_PATH}
 WORKDIR ${CONFIG_PATH}
 
-ENTRYPOINT ["${EMULATOR_PATH}/mbbsemu"]
+ENTRYPOINT ["/app/mbbsemu"]
