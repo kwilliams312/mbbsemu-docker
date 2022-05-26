@@ -38,4 +38,4 @@ RUN chmod a+x MBBSEmu
 VOLUME ${CONFIG_PATH}
 WORKDIR ${CONFIG_PATH}
 
-ENTRYPOINT ["/app/mbbsemu"]
+ENTRYPOINT ["/app/MBBSEmu"]
